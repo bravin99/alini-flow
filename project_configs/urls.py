@@ -13,3 +13,7 @@ urlpatterns = [
 handler400 = views.error_400
 handler404 = views.error_404
 handler500 = views.error_500
+
+admin.site.site_title = "Alini Flow"
+admin.site.site_header = "Alini Flow"
+admin.site.index_header = "Welcome to Alini Flow portal"
