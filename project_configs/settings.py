@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'whitenoise',
     'compressor',
     'django_quill',
+    'django_q',
 
     'accounts',
     'main_app',
@@ -110,6 +111,7 @@ EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]
 EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
 EMAIL_PORT = os.environ["EMAIL_PORT"]
 DEFAULT_FROM_EMAIL = os.environ["DEFAULT_FROM_EMAIL"]
+DEFAULT_TO_EMAIL = os.environ["DEFAULT_TO_EMAIL"]
 
 
 # Password validation
@@ -193,3 +195,18 @@ KEEP_COMMENTS_ON_MINIFYING = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+Q_CLUSTER = {
+    'name': 'aliniflow',
+    'orm': 'default',
+    'workers': 8,
+    'recycle': 500,
+    'timeout': 45,
+    'retry': 60,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q Tasks',
+    'attempt_count': 1
+}

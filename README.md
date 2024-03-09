@@ -45,7 +45,7 @@
 - Run server
 
     ```sh
-    python manage.py collectstatic
+    python manage.py collectstatic --no-input
     python manage.py compress --force
     python manage.py runserver
     ```
